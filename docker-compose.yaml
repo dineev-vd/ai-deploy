@@ -13,10 +13,10 @@ services:
       dockerfile: './Dockerfile'
     networks:
       - main
-  backend:
+  adminpanel:
     env_file: prod.env
     build:
-      context: ./admin
+      context: ./adminpanel
       dockerfile: './Dockerfile'
     networks:
       - main
