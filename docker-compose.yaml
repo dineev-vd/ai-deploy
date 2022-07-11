@@ -13,13 +13,20 @@ services:
       dockerfile: './Dockerfile'
     networks:
       - main
-  db:
-    image: postgres
+  backend:
     env_file: prod.env
+    build:
+      context: ./admin
+      dockerfile: './Dockerfile'
     networks:
       - main
-    ports:
-      - 5432:5432
+  #db:
+  #  image: postgres
+  #  env_file: prod.env
+  #  networks:
+  #    - main
+  #  ports:
+  #    - 5432:5432
   # pgadmin:
   #   env_file: dev.env
   #   image: dpage/pgadmin4
